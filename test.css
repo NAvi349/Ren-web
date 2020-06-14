@@ -94,7 +94,7 @@
   transform-origin: bottom;
   animation: enter 0.2s ease forwards;
   
-  min-width: 214px;
+  min-width: 300px;
   
 }
 .sub-menu .menu-item:nth-child(1) {
@@ -130,7 +130,7 @@
 }
 @media screen and (max-width: 600px) {
   .menu {
-    position: relative;
+    position: fixed;
   }
   .menu:after {
     content: "";
@@ -206,6 +206,7 @@
     left: -2rem;
     top: 50%;
     transform: translateY(-50%);
+    
   }
 }
 
