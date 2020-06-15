@@ -1,48 +1,24 @@
-* {
-  box-sizing: border-box;
-}
-
-.column {
-  float: left;
-  width: 50%;
-  padding: 10px;
- 
-}
-.left {
-  width: 60%;
-  text-align: justify;
-}
-
-.right {
-  width: 40%;
+#banner {
+  height: 150px;
+  width: 100%;
   border: 1px solid black;
-  text-align: center;
-  
 }
 
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+input#checkbox_menu {
+  display: none;
 }
-
-#content {
-  margin-top: 250px;
-}
-
-
-
 @media screen and (max-width: 600px) {
   .column {
     width: 100%;
   }
 }
 .menu {
-  background: #F67280;
+  background: #f67280;
   height: 4rem;
-  top: 150px;
-  position: fixed;
+  margin: 0;
+  position: sticky;
+  position: -webkit-sticky;
+  top: -1px;
   width: 100%;
 }
 .menu ol {
@@ -67,7 +43,7 @@
   border-radius: 50%;
   bottom: 5px;
   left: calc(50% - 2px);
-  background: #FECEAB;
+  background: #feceab;
   will-change: transform;
   transform: scale(0);
   transition: transform 0.2s ease;
@@ -85,17 +61,16 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   display: block;
-  color: #FFF;
+  color: #fff;
 }
 .sub-menu .menu-item {
   padding: 0.75rem 0;
-  background: #F67280;
+  background: #f67280;
   opacity: 0;
   transform-origin: bottom;
   animation: enter 0.2s ease forwards;
-  
+
   min-width: 300px;
-  
 }
 .sub-menu .menu-item:nth-child(1) {
   animation-duration: 0.2s;
@@ -118,19 +93,19 @@
   animation-delay: 0.4s;
 }
 .sub-menu .menu-item:hover {
-  background: #F8B195;
+  background: #f8b195;
 }
 .sub-menu .menu-item a {
   padding: 0 0.75rem;
 }
 @media screen and (max-width: 600px) {
   .sub-menu .menu-item {
-    background: #C06C84;
+    background: #c06c84;
   }
 }
 @media screen and (max-width: 600px) {
   .menu {
-    position: fixed;
+    position: sticky;
   }
   .menu:after {
     content: "";
@@ -139,12 +114,12 @@
     right: 1rem;
     width: 30px;
     height: 4px;
-    background: #FFF;
-    box-shadow: 0 10px #FFF, 0 -10px #FFF;
+    background: #fff;
+    box-shadow: 0 10px #fff, 0 -10px #fff;
   }
   .menu > ol {
     display: none;
-    background: #F67280;
+    background: #f67280;
     flex-direction: column;
     justify-content: center;
     height: 100vh;
@@ -181,11 +156,16 @@
   .menu > ol > .menu-item:hover {
     z-index: 1;
   }
-  .menu:hover > ol {
+  /* This is hover code */
+  /*.menu:hover > ol {
     display: flex;
   }
   .menu:hover:after {
     box-shadow: none;
+  }*/
+
+  #checkbox_menu:checked + ol {
+    display: flex;
   }
 }
 
@@ -206,11 +186,11 @@
     left: -2rem;
     top: 50%;
     transform: translateY(-50%);
-    
   }
 }
 
-html, body {
+html,
+body {
   font-size: 16px;
   font-family: "Fira Mono", monospace;
   margin: 0;
@@ -220,7 +200,8 @@ html, body {
 * {
   box-sizing: border-box;
 }
-*:before, *:after {
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -245,4 +226,30 @@ a {
   to {
     opacity: 1;
   }
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+.left {
+  width: 60%;
+  text-align: justify;
+}
+
+.right {
+  width: 40%;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#content {
+  margin-top: 100px;
 }
